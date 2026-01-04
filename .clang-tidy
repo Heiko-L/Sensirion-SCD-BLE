@@ -1,0 +1,49 @@
+# Aktive Checks
+Checks: >
+  -*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  readability-*,
+  performance-*,
+  -clang-analyzer-alpha.*,
+  -cppcoreguidelines-avoid-magic-numbers
+CheckOptions:
+  # Google Style Naming
+  - key:             readability-identifier-naming.ClassCase
+    value:           CamelCase
+  - key:             readability-identifier-naming.StructCase
+    value:           CamelCase
+  - key:             readability-identifier-naming.EnumCase
+    value:           CamelCase
+  - key:             readability-identifier-naming.EnumConstantCase
+    value:           UPPER_CASE
+  - key:             readability-identifier-naming.FunctionCase
+    value:           camelBack
+  - key:             readability-identifier-naming.MethodCase
+    value:           camelBack
+  - key:             readability-identifier-naming.VariableCase
+    value:           camelBack
+  - key:             readability-identifier-naming.MemberCase
+    value:           camelBack
+  - key:             readability-identifier-naming.MemberSuffix
+    value:           _
+  - key:             readability-identifier-naming.GlobalConstantCase
+    value:           UPPER_CASE
+  - key:             readability-identifier-naming.NamespaceCase
+    value:           lower_case
+
+# Verhindert Fehlermeldungen aus den Framework-Headern (Wichtig für PlatformIO!)
+HeaderFilterRegex: 'src/.*|include/.*'
+
+# System-Header ignorieren
+SystemHeaders: false
+
+# Formatierung: aus .clang-format lesen
+FormatStyle: file
+
+# Keine Warnungen von externen Bibliotheken
+ExtraArgs: 
+  - -isystem
+  - /usr/include
+WarningsAsErrors: ''

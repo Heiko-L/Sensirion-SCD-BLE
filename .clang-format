@@ -1,0 +1,26 @@
+---
+# Dies ist die Konfiguration für den Google C++ Style Guide
+Language: Cpp
+BasedOnStyle: Google
+
+# Google nutzt standardmäßig 2 Leerzeichen Einrückung
+IndentWidth: 4
+
+# Google setzt die Spaltenbegrenzung auf 80 Zeichen
+ColumnLimit: 80
+
+# Stellt sicher, dass der Pointer an den Typ gebunden ist: int* x; (nicht int *x;)
+PointerAlignment: Left
+
+# Sortiert Includes alphabetisch (sehr nützlich für die Ordnung)
+SortIncludes: true
+
+# Erlaubt kurze Funktionen in einer Zeile (z.B. Getter)
+AllowShortFunctionsOnASingleLine: All
+
+# Private/Public werden leicht eingerückt (-2 bedeutet bündig mit der Klasse bei IndentWidth 2)
+AccessModifierOffset: -4
+
+# Erzwingt geschweifte Klammern nach Google-Standard (meist gleiche Zeile)
+BreakBeforeBraces: Attach
+---
